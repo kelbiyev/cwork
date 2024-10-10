@@ -11,6 +11,11 @@ int main (){
 	chron::Time t1(10 , 18 , -5);
 	chron::Time t2;
 	chron::Time t3(586743);
+	chron::Time t4;
+	
+	std::cin>>t4;
+	std::cout<<t4<<"\n";
+	
 	/*if(IsAfternoonTime(t)){
 		std::cout<<t.GetHours() - 12<< " PM\n";
 	}*/
@@ -36,5 +41,6 @@ int main (){
 
 	
 	std::cout<<t2 - t1<<"\n";
+	
 	
 }
