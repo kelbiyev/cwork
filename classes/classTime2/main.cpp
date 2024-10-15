@@ -26,7 +26,7 @@ int main (){
 	
 	
 	
-	t2.AddSeconds(553);
+	t2.AddSeconds(50);
 	std::cout<<t2.GetHours()<<":";
 	std::cout<<t2.GetMinutes()<<":";
 	std::cout<<t2.GetSeconds()<<" ";
