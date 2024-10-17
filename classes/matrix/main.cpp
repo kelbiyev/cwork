@@ -7,6 +7,8 @@ int main (){
 		{4,5,6}
 		});
 	
+	Matrix<int> m2(3,4);
+	std::cin >> m2
 	std::cout<<"Rows"<<m.GetRows()<<"\n";	
 	std::cout<<"Columns"<<m.GetColumns()<<"\n";	
 	Matrix<double> md(3,4);

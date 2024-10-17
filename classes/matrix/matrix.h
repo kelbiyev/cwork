@@ -2,6 +2,7 @@
 #define MATRIX_H
 #include <vector>
 #include <iostream>
+#include <stdexcept>
 template <typename T>
 class Matrix {
 private:
@@ -32,6 +33,33 @@ public:
 		return data[i][j];
 	}
 };
+template <typename T>
+std::ostream& operator<< (std::ostream& out , const Matrix<T>& matrix){
+	const size_t rows = matrix.GetRows();
+	const size_t columns = matrix.GetColumns();
+	for(size_t i = 0; i != rows; ++i){
+		for(size_t j = 0; j != columns; ++j){
+			if(j>0){
+				out<<"\t";
+			}
+			out<<matrix(i,j);
+		}
+		out<<"\n";
+	}
+	return out;
+}
+template <typename T>
+std::istream& operator>> (std::istream& in , const Matrix<T>& matrix){
+	const size_t rows = matrix.GetRows();
+	const size_t columns = matrix.GetColumns();
+	for(size_t i = 0; i != rows; ++i){
+		for(size_t j = 0; j != columns; ++j){
+			in >> matrix(i,j);
+		}
+	}
+	return in;
+}
+
 #include "matrix.hpp"
 #endif //MATRIX_H
 

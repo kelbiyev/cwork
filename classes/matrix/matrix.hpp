@@ -1,6 +1,8 @@
 #ifndef MATRIX_HPP
 #define MATRIX_HPP
 #include "matrix.h"
+#include <stdexcept>
+
 template <typename T>
 size_t Matrix<T>::GetRows() const{
 	return data.size();
@@ -33,6 +35,7 @@ Matrix<T>::Matrix(const std::vector<std::vector<T>>& d): data {d} {
 
 }
 
+
 /*
 template <typename T>
 Matrix<T>::Matrix(size_t rows, size_t columns){
@@ -42,8 +45,50 @@ Matrix<T>::Matrix(size_t rows, size_t columns){
 	}
 }
 */
+template <typename T>
+Matrix<T>& operator+=(const Matrix<T>& other){
+	const size_t rows = GetRows();
+	const size_t columns = GetColumns();
+	if(rows != other.GetRows() || columns != other.GetColumns()){
+		throw std::invalid_argument("Different sizes");
+	}
+	for(size_t i = 0; i!= rows; ++i){
+		for(size_t i = 0; i!= rows; ++i){
+			data(i,j) += other.data(i,j);
+		}
+	}
+	return *this;
+} 
 
+template <typename T>
+Matrix<T> operator+ (const Matrix<T>& m1 , const Matrix<T>& m2){
+	auto tmp {m1};
+	tmp += m2;
+	return tmp;
+}
 
+template <typename T1>
+bool operator== (const Matrix<T1>& other) const {
+	const size_t rows = GetRows();
+	const size_t columns = GetColumns();
+	if(rows != other.GetRows() || columns != other.GetColumns()){
+		return false;
+	}
+	for (size_t i = 0; i != rows; ++i){
+		for(size_t j = 0; j != columns; ++j){
+			if(!((*this)(i,j) == other(i,j))){
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+template <typename T1>
+template <typename T2>
+bool operator!= (const Matrix<T1>& m1, const Matrix<T2>& m2){
+	return !(m1 == m2);
+}
 
 #endif //MATRIX_HPP
 
