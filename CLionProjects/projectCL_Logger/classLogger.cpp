@@ -56,6 +56,16 @@ public:
         return *this;
     }
 };
+
+class InheritedLogger: public Logger {
+public:
+    InheritedLogger() {
+        std::cout<<"InheritedLogger()\n";
+    }
+    ~InheritedLogger() {
+        std::cout<<"~InheritedLogger()\n";
+    }
+};
 void f(const Logger& x ) {
     std::cout<<"void f\n";
 }
@@ -104,13 +114,18 @@ int main () {
     f(x);
     std::cout<<"Bye\n";*/
 
+    /*
     Logger x1;
     Logger x2;
     x2 = x1;
     x2 = std::move(x1);
+    */
 
 
     /*Logger x2=x1;
     Logger x3 = Logger();
     Logger x4 = std::move(x1);*/
+
+
+    InheritedLogger x;
 }

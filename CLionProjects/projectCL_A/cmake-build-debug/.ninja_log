@@ -1,0 +1,5 @@
+# ninja log v6
+1	124	1729841655315130302	build.ninja	ba5489bd9b6c9062
+0	1258	1729841655346135531	CMakeFiles/projectCL_A.dir/class.cpp.o	e5aba37e98560b94
+1	871	1729841759244506819	CMakeFiles/projectCL_A.dir/class.cpp.o	e5aba37e98560b94
+872	997	1729841760115651356	projectCL_A	14cd3509e47e508e
