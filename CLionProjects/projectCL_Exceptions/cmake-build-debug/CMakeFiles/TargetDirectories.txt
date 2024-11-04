@@ -1,0 +1,3 @@
+/home/stud-04/exampleGit/cwork/cwork/CLionProjects/projectCL_Exceptions/cmake-build-debug/CMakeFiles/projectCL_Exceptions.dir
+/home/stud-04/exampleGit/cwork/cwork/CLionProjects/projectCL_Exceptions/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/stud-04/exampleGit/cwork/cwork/CLionProjects/projectCL_Exceptions/cmake-build-debug/CMakeFiles/rebuild_cache.dir
